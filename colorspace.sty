@@ -498,7 +498,7 @@
     % read the icc file and extract the space it applies to
     \ifx\pdffiledump\@undefined
       \directlua{
-      local icc = io.open([[#2]], "r")
+      local icc = io.open(kpse.find_file([[#2]]), "r")
       if icc then
         icc:seek("set", 16)
         tex.print([[\noexpand\csname @namedef\endcsname{spc@tempa}{]]
